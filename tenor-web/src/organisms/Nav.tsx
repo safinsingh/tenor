@@ -11,7 +11,7 @@ export type NavProps = {
 };
 
 export const Nav = ({ user, pages, active }: NavProps) => (
-	<div className="flex justify-center h-full w-80 bg-gradient-to-r from-gray-100 to-gray-200">
+	<div className="flex justify-center h-full w-80 nav-gradient">
 		<div className="flex flex-col items-start gap-5 my-10">
 			<ProfileBox {...user} marginBottom="mb-6" />
 			{pages.map((page) => (

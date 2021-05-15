@@ -1,6 +1,7 @@
 // @ts-check
 
 const defaultTheme = require("tailwindcss/defaultTheme");
+const plugin = require("tailwindcss/plugin");
 
 /**  @type {import('tailwindcss/tailwind-config').TailwindConfig} */
 module.exports = {
@@ -17,5 +18,15 @@ module.exports = {
 	variants: {
 		extend: {}
 	},
-	plugins: []
+	plugins: [
+		plugin(({ addUtilities }) => {
+			addUtilities({
+				".nav-gradient": {
+					background:
+						"linear-gradient(90deg, #E8ECF2 100%, #EFF1F5 0%);",
+					boxShadow: "inset -5px 0px 30px 5px rgba(0, 0, 0, 0.02);"
+				}
+			});
+		})
+	]
 };
