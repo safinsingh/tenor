@@ -1,36 +1,34 @@
 import { Play } from "react-feather";
-import { classnames, TArg, THeight } from "tailwindcss-classnames";
+import clsx, { ClassValue } from "clsx";
 import resolveConfig from "tailwindcss/resolveConfig";
 import tailwindConfig from "../../tailwind.config.js";
+import { ISong } from "../common/song";
 
-export interface HoverableCoverProps {
-	cover: string;
-	height?: THeight;
-	onClick?: () => void | PromiseLike<void>;
-}
+export type HoverableCoverProps =
+	| Pick<ISong, "album" | "onClick"> & { height?: ClassValue };
 
 const fullConfig = resolveConfig(tailwindConfig);
 
 export const HoverableCover = ({
-	cover,
+	album,
 	height = "h-12",
 	onClick
 }: HoverableCoverProps) => (
 	<div className="relative inline-block">
 		<img
-			className={classnames(
+			className={clsx(
 				height,
 				"filter",
 				"duration-150",
 				"rounded-md",
-				"transform" as TArg,
-				"group-hover:blur-sm" as TArg,
-				"group-hover:scale-90" as TArg
+				"transform",
+				"group-hover:blur-sm",
+				"group-hover:scale-90"
 			)}
-			src={cover}
+			src={album.cover}
 		/>
 		<div
-			className="hidden duration-150 absolute top-0 left-0 w-full h-full group-hover:flex items-center justify-center cursor-pointer"
+			className="absolute top-0 left-0 items-center justify-center hidden w-full h-full duration-150 cursor-pointer group-hover:flex"
 			onClick={onClick}
 		>
 			<Play color={fullConfig.theme.colors.white} />

@@ -1,18 +1,14 @@
 import { HoverableCover } from "../atoms/HoverableCover";
+import { ISong } from "../common/song";
 
-export interface SongCardProps {
-	title: string;
-	artist: string;
-	cover: string;
-	onClick?: () => void | PromiseLike<void>;
-}
+export type SongCardProps = Omit<ISong, "length">;
 
-export const SongCard = ({ title, artist, cover, onClick }: SongCardProps) => (
+export const SongCard = ({ title, artist, album, onClick }: SongCardProps) => (
 	<div className="flex flex-row items-center gap-3 group">
-		<HoverableCover cover={cover} onClick={onClick} />
-		<div className="flex flex-col">
-			<h1 className="text-gray-900 text-lg font-semibold">{title}</h1>
-			<h2 className="text-gray-700 text-sm font-semibold">{artist}</h2>
+		<HoverableCover album={album} onClick={onClick} />
+		<div className="flex flex-col text-lg font-semibold">
+			<h1 className="text-gray-900">{title}</h1>
+			<h2 className="text-gray-700">{artist}</h2>
 		</div>
 	</div>
 );
