@@ -1,6 +1,7 @@
 import { Grid, User, Layers, Headphones } from "react-feather";
 import { ProfileBoxProps } from "../atoms/ProfileBox";
 import { ISong } from "../common/song";
+import { PlayerBarProps } from "../organisms/PlayerBar";
 
 export const song = {
 	title: "5% Tint",
@@ -11,6 +12,17 @@ export const song = {
 		cover: "https://i.pinimg.com/originals/15/4b/3a/154b3a679c547316bb33ebe49b1ec517.jpg"
 	}
 } as ISong;
+
+export const playingSong = {
+	title: "5% Tint",
+	artist: "Travis Scott",
+	length: 127,
+	album: {
+		name: "Astroworld",
+		cover: "https://i.pinimg.com/originals/15/4b/3a/154b3a679c547316bb33ebe49b1ec517.jpg"
+	},
+	head: 71
+} as PlayerBarProps["song"];
 
 export const user = {
 	name: "Safin Singh",

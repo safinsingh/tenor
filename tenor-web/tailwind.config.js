@@ -1,4 +1,4 @@
-// @ts-check
+// @ts-nocheck
 
 const defaultTheme = require("tailwindcss/defaultTheme");
 const plugin = require("tailwindcss/plugin");
@@ -25,6 +25,9 @@ module.exports = {
 					background:
 						"linear-gradient(90deg, #E8ECF2 100%, #EFF1F5 0%);",
 					boxShadow: "inset -5px 0px 30px 5px rgba(0, 0, 0, 0.02);"
+				},
+				".player-shadow": {
+					boxShadow: "0px -5px 30px 5px rgba(0, 0, 0, 0.03);"
 				}
 			});
 		})
