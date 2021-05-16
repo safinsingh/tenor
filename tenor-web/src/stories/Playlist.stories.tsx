@@ -4,7 +4,7 @@ import { Playlist, PlaylistProps } from "../templates/Playlist";
 import { mockPageWrapper, song } from "./var";
 
 export default {
-	title: "Playlist Page",
+	title: "Pages/Playlist Page",
 	component: Playlist
 } as Meta;
 

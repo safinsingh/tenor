@@ -2,6 +2,7 @@ import { Grid, User, Layers, Headphones } from "react-feather";
 import { NavigatorButtonProps } from "../atoms/NavigatorButton";
 import { ProfileBoxProps } from "../atoms/ProfileBox";
 import { ISong } from "../common/song";
+import { SongGroupCardProps } from "../molecules/SongGroupCard";
 import { PlayerBarProps } from "../organisms/PlayerBar";
 import { GlobalParams } from "../templates/PageWrapper";
 
@@ -62,3 +63,14 @@ export const mockPageWrapper = {
 		controls: {}
 	}
 } as GlobalParams;
+
+export const playlist = {
+	cover: song.album.cover,
+	name: "Cool Playlist",
+	description: "This is a playlist description"
+} as SongGroupCardProps;
+
+export const album = {
+	cover: song.album.cover,
+	name: "Astroworld"
+} as SongGroupCardProps;

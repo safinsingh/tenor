@@ -5,5 +5,6 @@ export const parameters = {
 	backgrounds: {
 		default: "light",
 		values: [{ name: "light", value: "#F6F8FA" }]
-	}
+	},
+	layout: "fullscreen"
 };

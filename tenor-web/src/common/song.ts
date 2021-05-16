@@ -3,5 +3,4 @@ export interface ISong {
 	artist: string;
 	album: { name: string; cover: string };
 	length: number;
-	onClick?: () => void | PromiseLike<void>;
 }

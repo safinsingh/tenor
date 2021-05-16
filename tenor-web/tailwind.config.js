@@ -31,6 +31,9 @@ module.exports = {
 				},
 				".bg-body": {
 					backgroundColor: "#F6F8FA"
+				},
+				".auto-fit-cols-20": {
+					gridTemplateColumns: "repeat(auto-fit, minmax(16rem, 1fr));"
 				}
 			});
 		})

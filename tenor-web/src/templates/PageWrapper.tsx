@@ -11,7 +11,8 @@ export const PageWrapper: React.FC<GlobalParams> = ({
 	<div
 		className="grid h-screen"
 		style={{
-			gridTemplateColumns: "auto 1fr"
+			gridTemplateColumns: "auto 1fr",
+			gridTemplateRows: "1fr auto"
 		}}
 	>
 		<Nav {...nav} />

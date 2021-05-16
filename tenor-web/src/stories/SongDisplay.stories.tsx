@@ -1,6 +1,5 @@
 import { Story, Meta } from "@storybook/react";
-import { SongDisplay } from "../molecules/SongDisplay";
-import { ISong } from "../common/song";
+import { SongDisplay, SongDisplayProps } from "../molecules/SongDisplay";
 import { song } from "./var";
 
 export default {
@@ -8,7 +7,7 @@ export default {
 	component: SongDisplay
 } as Meta;
 
-const Template: Story<ISong> = (args) => <SongDisplay {...args} />;
+const Template: Story<SongDisplayProps> = (args) => <SongDisplay {...args} />;
 
 export const Sample = Template.bind({});
 Sample.args = song;

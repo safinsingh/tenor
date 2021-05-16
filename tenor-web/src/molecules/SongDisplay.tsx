@@ -1,9 +1,13 @@
 import { ISong } from "../common/song";
-import { HoverableCover } from "../atoms/HoverableCover";
 import { timestampToString } from "../../lib";
 import clsx from "clsx";
+import { SongCard } from "./SongCard";
 
-export const SongDisplay: React.FC<ISong> = ({
+export type SongDisplayProps = ISong & {
+	onClick?: () => void | PromiseLike<void>;
+};
+
+export const SongDisplay: React.FC<SongDisplayProps> = ({
 	title,
 	artist,
 	album,
@@ -19,12 +23,16 @@ export const SongDisplay: React.FC<ISong> = ({
 		)}
 		onClick={onClick}
 	>
-		<div className="flex flex-row items-center gap-3 text-lg">
-			<HoverableCover album={album} height="h-8" buttonHeight="1rem" />
-			<h1 className="text-gray-900">{title}</h1>
-			<h1 className="text-gray-600">{artist}</h1>
-		</div>
-		<h1 className="text-gray-400 text-md">{album.name}</h1>
-		<h1 className="text-gray-400 text-md">{timestampToString(length)}</h1>
+		<SongCard
+			title={title}
+			artist={artist}
+			album={album}
+			coverHeight="h-8"
+			titleHeight="text-sm"
+			artistHeight="text-xs"
+			buttonHeight="1rem"
+		/>
+		<h1 className="hidden text-sm text-gray-400 lg:inline">{album.name}</h1>
+		<h1 className="text-sm text-gray-400">{timestampToString(length)}</h1>
 	</div>
 );

@@ -5,7 +5,7 @@ import tailwindConfig from "../../tailwind.config.js";
 import { ISong } from "../common/song";
 
 export type HoverableCoverProps =
-	| Pick<ISong, "album" | "onClick"> & {
+	| Pick<ISong, "album"> & {
 			height?: ClassValue;
 			buttonHeight?: string;
 	  };
@@ -15,10 +15,9 @@ const fullConfig = resolveConfig(tailwindConfig);
 export const HoverableCover = ({
 	album,
 	height = "h-12",
-	buttonHeight,
-	onClick
+	buttonHeight
 }: HoverableCoverProps) => (
-	<div className="relative inline-block">
+	<div className="relative inline-block h-full">
 		<img
 			className={clsx(
 				height,
@@ -31,10 +30,7 @@ export const HoverableCover = ({
 			)}
 			src={album.cover}
 		/>
-		<div
-			className="absolute top-0 left-0 items-center justify-center hidden w-full h-full duration-150 cursor-pointer group-hover:flex"
-			onClick={onClick}
-		>
+		<div className="absolute top-0 left-0 items-center justify-center hidden w-full h-full duration-150 cursor-pointer group-hover:flex">
 			<Play color={fullConfig.theme.colors.white} size={buttonHeight} />
 		</div>
 	</div>
