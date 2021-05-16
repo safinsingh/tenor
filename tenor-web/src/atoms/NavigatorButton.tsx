@@ -4,7 +4,7 @@ import { Icon } from "react-feather";
 export type NavigatorButtonProps = {
 	icon: Icon;
 	name: string;
-	active: boolean;
+	active?: boolean;
 	onClick?: () => void | PromiseLike<void>;
 };
 

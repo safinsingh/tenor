@@ -5,13 +5,17 @@ import tailwindConfig from "../../tailwind.config.js";
 import { ISong } from "../common/song";
 
 export type HoverableCoverProps =
-	| Pick<ISong, "album" | "onClick"> & { height?: ClassValue };
+	| Pick<ISong, "album" | "onClick"> & {
+			height?: ClassValue;
+			buttonHeight?: string;
+	  };
 
 const fullConfig = resolveConfig(tailwindConfig);
 
 export const HoverableCover = ({
 	album,
 	height = "h-12",
+	buttonHeight,
 	onClick
 }: HoverableCoverProps) => (
 	<div className="relative inline-block">
@@ -31,7 +35,7 @@ export const HoverableCover = ({
 			className="absolute top-0 left-0 items-center justify-center hidden w-full h-full duration-150 cursor-pointer group-hover:flex"
 			onClick={onClick}
 		>
-			<Play color={fullConfig.theme.colors.white} />
+			<Play color={fullConfig.theme.colors.white} size={buttonHeight} />
 		</div>
 	</div>
 );

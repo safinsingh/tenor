@@ -1,7 +1,9 @@
 import { Grid, User, Layers, Headphones } from "react-feather";
+import { NavigatorButtonProps } from "../atoms/NavigatorButton";
 import { ProfileBoxProps } from "../atoms/ProfileBox";
 import { ISong } from "../common/song";
 import { PlayerBarProps } from "../organisms/PlayerBar";
+import { GlobalParams } from "../templates/PageWrapper";
 
 export const song = {
 	title: "5% Tint",
@@ -47,4 +49,16 @@ export const pages = [
 		icon: Layers,
 		name: "Playlists"
 	}
-];
+] as NavigatorButtonProps[];
+
+export const mockPageWrapper = {
+	nav: {
+		user,
+		pages,
+		active: "Songs"
+	},
+	player: {
+		song: playingSong,
+		controls: {}
+	}
+} as GlobalParams;

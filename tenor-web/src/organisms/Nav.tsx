@@ -1,3 +1,5 @@
+import clsx from "clsx";
+import { ClassValue } from "clsx";
 import {
 	NavigatorButton,
 	NavigatorButtonProps
@@ -8,10 +10,11 @@ export type NavProps = {
 	user: ProfileBoxProps;
 	pages: NavigatorButtonProps[];
 	active: string;
+	className?: ClassValue;
 };
 
-export const Nav = ({ user, pages, active }: NavProps) => (
-	<div className="flex justify-center h-full w-80 nav-gradient">
+export const Nav = ({ user, pages, active, className }: NavProps) => (
+	<div className={clsx("flex justify-center w-80 nav-gradient", className)}>
 		<div className="flex flex-col items-start gap-5 my-10">
 			<ProfileBox {...user} marginBottom="mb-6" />
 			{pages.map((page) => (

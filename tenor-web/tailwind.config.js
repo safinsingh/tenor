@@ -28,6 +28,9 @@ module.exports = {
 				},
 				".player-shadow": {
 					boxShadow: "0px -5px 30px 5px rgba(0, 0, 0, 0.03);"
+				},
+				".bg-body": {
+					backgroundColor: "#F6F8FA"
 				}
 			});
 		})
