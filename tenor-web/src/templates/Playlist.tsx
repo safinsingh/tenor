@@ -1,10 +1,10 @@
-import { ISong } from "../common/song";
+import { Song } from "../../lib/xstate";
 import { SongDisplay } from "../molecules/SongDisplay";
 
 export type PlaylistProps = {
 	title: string;
 	description: string;
-	songs: ISong[];
+	songs: Song[];
 };
 
 export const Playlist = ({ title, description, songs }: PlaylistProps) => (

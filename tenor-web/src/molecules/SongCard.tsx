@@ -1,8 +1,8 @@
 import clsx, { ClassValue } from "clsx";
 import { HoverableCover } from "../atoms/HoverableCover";
-import { ISong } from "../common/song";
+import { Song } from "../../lib/xstate";
 
-export type SongCardProps = Omit<ISong, "length"> & {
+export type SongCardProps = Omit<Song, "length"> & {
 	onClick?: () => void | PromiseLike<void>;
 	coverHeight?: ClassValue;
 	titleHeight?: ClassValue;

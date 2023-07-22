@@ -1,5 +1,5 @@
 import { SongCard } from "../molecules/SongCard";
-import { ISong } from "../common/song";
+import { Song } from "../../lib/xstate";
 import { PlayerControls, PlayerControlsProps } from "../atoms/PlayerControls";
 import { PlayerProgress, PlayerProgressProps } from "../atoms/PlayerProgress";
 import { ClassValue } from "clsx";
@@ -7,7 +7,7 @@ import clsx from "clsx";
 
 export type PlayerBarProps = {
 	controls: PlayerControlsProps;
-	song: ISong & PlayerProgressProps;
+	song: Song & PlayerProgressProps;
 	className?: ClassValue;
 };
 

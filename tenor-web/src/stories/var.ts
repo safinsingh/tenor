@@ -1,7 +1,7 @@
 import { Grid, User, Layers, Headphones } from "react-feather";
 import { NavigatorButtonProps } from "../atoms/NavigatorButton";
 import { ProfileBoxProps } from "../atoms/ProfileBox";
-import { ISong } from "../common/song";
+import { Song } from "../../lib/xstate";
 import { SongGroupCardProps } from "../molecules/SongGroupCard";
 import { PlayerBarProps } from "../organisms/PlayerBar";
 import { GlobalParams } from "../templates/PageWrapper";
@@ -13,8 +13,9 @@ export const song = {
 	album: {
 		name: "Astroworld",
 		cover: "https://i.pinimg.com/originals/15/4b/3a/154b3a679c547316bb33ebe49b1ec517.jpg"
-	}
-} as ISong;
+	},
+	url: null
+} as Song;
 
 export const playingSong = {
 	title: "5% Tint",
@@ -24,7 +25,8 @@ export const playingSong = {
 		name: "Astroworld",
 		cover: "https://i.pinimg.com/originals/15/4b/3a/154b3a679c547316bb33ebe49b1ec517.jpg"
 	},
-	head: 71
+	head: 71,
+	url: null
 } as PlayerBarProps["song"];
 
 export const user = {

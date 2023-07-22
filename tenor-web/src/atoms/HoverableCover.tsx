@@ -2,10 +2,10 @@ import { Play } from "react-feather";
 import clsx, { ClassValue } from "clsx";
 import resolveConfig from "tailwindcss/resolveConfig";
 import tailwindConfig from "../../tailwind.config.js";
-import { ISong } from "../common/song";
+import { Song } from "../../lib/xstate";
 
 export type HoverableCoverProps =
-	| Pick<ISong, "album"> & {
+	| Pick<Song, "album"> & {
 			height?: ClassValue;
 			buttonHeight?: string;
 	  };

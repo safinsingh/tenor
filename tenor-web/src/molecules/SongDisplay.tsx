@@ -1,9 +1,9 @@
-import { ISong } from "../common/song";
+import { Song } from "../../lib/xstate";
 import { timestampToString } from "../../lib";
 import clsx from "clsx";
 import { SongCard } from "./SongCard";
 
-export type SongDisplayProps = ISong & {
+export type SongDisplayProps = Song & {
 	onClick?: () => void | PromiseLike<void>;
 };
 
